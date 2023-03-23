@@ -1,0 +1,21 @@
+package javaintermediate;
+
+public class InnerClass {
+
+	private int num = 10;
+	private static int sNum = 20;
+	
+	class InClass{
+		int iNum = 100;
+		void inTest() {
+			System.out.println("Outer Class num: "+ num );
+			System.out.println("Outer Class sNum: "+ sNum );
+			System.out.println("Outer Class iNum: "+ iNum );
+		}
+	}
+	
+	public static void main(String args[]) {
+		
+		InClass obj = new InClass();
+	}
+}
