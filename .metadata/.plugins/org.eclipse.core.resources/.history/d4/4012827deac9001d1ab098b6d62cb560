@@ -1,0 +1,8 @@
+package javaintermediate;
+
+public class addTest {
+
+	Calc add = (x,y) -> {return x+y;};
+	
+	
+}

@@ -1,0 +1,12 @@
+package javaintermediate;
+
+public class StringConcatTest {
+
+	public static void main(String[] args) {
+
+		StringConcatImpl  strImpl = new StringConcatImpl();
+		
+		strImpl.makeString("hillow","lamba");
+	}
+
+}

@@ -1,0 +1,9 @@
+package javaintermediate;
+
+
+@FunctionalInterface
+public interface StringConcat{
+    public int makeString(int x, int y);
+    
+
+}

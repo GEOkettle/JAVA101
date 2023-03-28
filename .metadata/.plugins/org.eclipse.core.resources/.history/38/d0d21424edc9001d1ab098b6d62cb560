@@ -1,0 +1,6 @@
+package javaintermediate;
+
+public class StringConcatImpl  implements StringConcat{
+
+	
+}

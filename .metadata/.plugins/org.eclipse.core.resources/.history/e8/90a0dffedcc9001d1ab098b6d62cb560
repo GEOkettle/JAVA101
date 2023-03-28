@@ -1,0 +1,21 @@
+package javaintermediate;
+
+class Outer2{
+	
+	//이거 아직 안배운거 걍 그렇다고 생각
+	Runnable getRunnable() {
+			class MyRunnable implements Runnable{
+				
+			}
+		return new MyRunnable();
+	}
+}
+
+public class AnonumousInnerTest {
+
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

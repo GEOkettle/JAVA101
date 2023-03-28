@@ -1,0 +1,73 @@
+package javaintermediate;
+
+class OutClass {
+
+	private int num = 10;
+	private static int sNum = 20;
+	private InClass inClass;
+	
+	public OutClass(){
+		inClass = new InClass(); // 내부 클래스 생성
+	}
+	
+	class InClass{
+		
+		int inNum = 100;
+		//static int sInNum = 200;  //에러 남 static의 특징을 생각해보셈
+		
+		void inTest(){
+			System.out.println("OutClass num = " +num + "(외부 클래스의 인스턴스 변수)");
+			System.out.println("OutClass sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
+			System.out.println("InClass inNum = " + inNum + "(내부 클래스의 인스턴스 변수)");
+		}
+		
+	    //static void sTest(){  //에러 남 static의 특징을 생각해보셈
+	    	
+	    //}
+		
+	}
+	
+	public void usingClass(){
+		inClass.inTest(); //내부 클래스 변수를 사용하여 메서드 호출하기
+	}
+	
+	static class InStaticClass {
+		
+		int iNum = 100;
+		static int sInNum = 200; 
+		
+		void inTset () {
+//			System.out.println("OutClass num = " +num + "(외부 클래스의 인스턴스 변수)");// 에러 남 static의 특징을 생각해보셈
+//			System.out.println("InClass inNum = " + inNum + "(내부 클래스의 인스턴스 변수)");//에러 남 static의 특징을 생각해보셈
+			System.out.println("OutClass sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
+			System.out.println("iNum = " + iNum + "(스태틱 내부클래스의 인스턴스변수 [지꺼])");
+			System.out.println("sInNum = " + sInNum + "(스태틱 내부 클래스의 스택변수)");
+		}
+			
+		
+	}
+}
+
+public class InnerTest {
+
+	public static void main(String[] args) {
+		//innerClass
+		OutClass outClass = new OutClass();
+		System.out.println("외부 클래스 이용하여 내부 클래스 기능 호출");
+		outClass.usingClass();    // 내부 클래스 기능 호출
+	    System.out.println();
+	    
+		OutClass.InClass inClass = outClass.new InClass();   // 외부 클래스를 이용하여 내부 클래스 생성
+		//외부 클래스 인스턴스가 생성되기전에는 생성할 수없다
+		System.out.println("외부 클래스 변수를 이용하여 내부 클래스 생성");
+		inClass.inTest();
+		System.out.println();
+		
+		System.out.println("static inner class");
+		//static innerClass
+		OutClass.InStaticClass sInClass = new OutClass.InStaticClass();// inStaticClass는 스태틱이므로
+		//OutClass 인스턴스의 존재 유무를  떠나서 호출 할 수 있다. 
+		sInClass.inTset();
+	}
+
+}

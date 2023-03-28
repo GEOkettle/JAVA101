@@ -1,0 +1,11 @@
+package javaintermediate;
+
+public class addTest {
+
+	
+  public static void main(String[] args) {
+	  Calc  calculator = (x,y) -> {return x+y;};
+	  
+	  System.out.println(calculator.add(5,9));
+  }
+}

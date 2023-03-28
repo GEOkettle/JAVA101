@@ -1,0 +1,14 @@
+package javaintermediate;
+
+public class StringConcatImpl  implements StringConcat{
+
+	@Override
+	public void makeString(String x, String y) {
+
+		System.out.println(x+","+y );
+	}
+	
+	
+
+	
+}

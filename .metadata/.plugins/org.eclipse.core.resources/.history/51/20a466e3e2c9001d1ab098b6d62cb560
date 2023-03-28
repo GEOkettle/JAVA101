@@ -1,0 +1,28 @@
+package javaintermediate;
+
+class Outer2{
+	
+	//이거 아직 안배운거 걍 
+	Runnable getRunnable() {
+			class MyRunnable implements Runnable{
+
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				
+			}
+		return new MyRunnable();
+	}
+}
+
+public class AnonumousInnerTest {
+
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

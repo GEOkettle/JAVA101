@@ -1,0 +1,49 @@
+package javaintermediate;
+
+class Outer2{
+	int outNum = 100; //클래스의 멤버변수 힙
+	static int sNum =200;//스태틱변수 스태틱
+	
+	
+	//이거 아직 안배운거 걍  지금은 함수라고 생각합니다.
+	Runnable getRunnable(int i) { // 매개변수니까 스택 [사실아님] 사실 상수 스태틱
+		
+			int num = 10; // 함수의 지역변수니까 스택 [사실아님] 사실 상수 스태틱
+		
+			class MyRunnable implements Runnable{
+				
+				int localNum = 1000;//클래스의 멤버변수 힙
+				
+				@Override
+				public void run() {
+//				 i = 50; //어 ㅅㅂ 스택에 있는 애가 재할당 외않되?
+//				 num = 100;	//어 ㅅㅂ 스택에 있는 애가 재할당 외않되?
+					
+				//내부에 클래스를 가지고 있는 모든  메서드의 매개변수와 지역변수는  컴파일러가 final로 처리한다.
+				//왜냐면 메서드 호출이끝나도 클래스의 인스턴스는 힙에 남아있을꺼고 매개변수/지역변수를 사용할 수도 있으니까	
+					
+					System.out.println(outNum);
+					System.out.println(sNum);
+					System.out.println(num);
+					System.out.println(i);
+					System.out.println(localNum);
+				}
+				
+				
+			}
+		return new MyRunnable();
+	}
+}
+
+public class AnoymousInnerTest {
+
+	
+	public static void main(String[] args) {
+		
+		Outer2 out = new Outer2();
+		Runnable  runner = out.getRunnable(100);
+		
+		runner.run();
+		
+	}
+}

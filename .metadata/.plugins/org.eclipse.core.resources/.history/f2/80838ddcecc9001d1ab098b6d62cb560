@@ -1,0 +1,12 @@
+package javaintermediate;
+
+
+public class addTest {
+
+	
+  public static void main(String[] args) {
+	  StringConcat  cc = (a,b) -> {return a+b;};
+	  
+	  System.out.println(cc.makeString("hillow","lamda"));
+  }
+}
